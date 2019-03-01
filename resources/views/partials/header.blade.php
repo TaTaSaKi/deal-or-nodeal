@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            <h1>My Website</h1>
+            <span class="subheading">A Blog Theme by Ratanak</span>
           </div>
         </div>
       </div>
