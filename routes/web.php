@@ -13,6 +13,8 @@
 
 Route::get('/','HomeController@index');
 
+Route::get('/profile', 'ProfileController@index');
+
 Route::get('detail/{id}', function ($id) {
     $datas=[
         [
@@ -51,4 +53,3 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/profile', 'ProfileController@index');
