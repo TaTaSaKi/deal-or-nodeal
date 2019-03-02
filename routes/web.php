@@ -11,12 +11,36 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','HomeController@index');
 
-Route::get('home', function () {
-    return view('index');
+Route::get('detail/{id}', function ($id) {
+    $datas=[
+        [
+            'id' => '1',
+            'name' => 'Apple',
+            'description' => 'Welcome Apple !',
+        ],
+        [
+            'id' => '2',
+            'name' => 'Samsung',
+            'description' => 'Welcome Samsung !',
+        ],
+        [
+            'id' => '3',
+            'name' => 'Sony',
+            'description' => 'Welcome Sony !',
+        ],
+    ];
+    $datafound = null;
+    $message = null;
+    foreach ($datas as $data) {
+        if ($data['id'] == $id) {
+            $datafound = $data;
+        } else {
+            $message = 'Not Found!';
+        }
+    }
+    return view('detail', compact('datafound'));
 });
 
 Route::get('/about', function () {
@@ -26,3 +50,5 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/profile', 'ProfileController@index');
