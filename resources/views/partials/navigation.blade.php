@@ -5,7 +5,7 @@
       </button>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('profile') }}">Chheang Vanny Ratanak</a>
+          <a class="nav-link" href="{{ url('profile') }}">{{ config('app.name') }}</a>
         </li>
       </ul>
      
@@ -18,7 +18,7 @@
             <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('about') }}">About</a>
+            <a class="nav-link" href="{{ url('post.create') }}">New Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('contact') }}">Contact</a>

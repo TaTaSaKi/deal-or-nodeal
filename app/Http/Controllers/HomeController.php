@@ -11,6 +11,11 @@ class HomeController extends Controller
      *
      * @return void
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -18,23 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $datas=[
-            [
-                'id' => '1',
-                'name' => 'Apple',
-                'description' => 'Welcome Apple !',
-            ],
-            [
-                'id' => '2',
-                'name' => 'Samsung',
-                'description' => 'Welcome Samsung !',
-            ],
-            [
-                'id' => '3',
-                'name' => 'Sony',
-                'description' => 'Welcome Sony !',
-            ],
-        ];
-        return view('index', compact('datas'));
+        return view('home');
     }
 }

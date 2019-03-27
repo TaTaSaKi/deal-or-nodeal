@@ -12,6 +12,11 @@
                     <a class="btn btn-primary" href="detail/{{$data['id']}}">{{ $data['name'] }}</a>                       
                     @endforeach
                 </div>
+                <form action="">
+                    @method('delete')
+                    <button>delete</button>
+                </form>
+                <a href="{{ route('post.delete') }}"></a>
             </div>
         </div>
     </div>

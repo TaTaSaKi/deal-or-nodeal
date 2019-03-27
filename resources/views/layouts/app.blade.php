@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Welcome Home</title>
+  <title>{{ config('app.name') }} - @yield('title')</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@
 
   <!-- Page Header -->
   @include('partials.header')
-  @yield('contents')
+  @yield('content')
 
   <hr>
 

@@ -11,45 +11,13 @@
 |
 */
 
-Route::get('/','HomeController@index');
-
-Route::get('/profile', 'ProfileController@index');
-
-Route::get('detail/{id}', function ($id) {
-    $datas=[
-        [
-            'id' => '1',
-            'name' => 'Apple',
-            'description' => 'Welcome Apple !',
-        ],
-        [
-            'id' => '2',
-            'name' => 'Samsung',
-            'description' => 'Welcome Samsung !',
-        ],
-        [
-            'id' => '3',
-            'name' => 'Sony',
-            'description' => 'Welcome Sony !',
-        ],
-    ];
-    $datafound = null;
-    $message = null;
-    foreach ($datas as $data) {
-        if ($data['id'] == $id) {
-            $datafound = $data;
-        } else {
-            $message = 'Not Found!';
-        }
-    }
-    return view('detail', compact('datafound'));
+Auth::routes();
+Route::get('','HomeController@index')->name('home');
+Route::group(['prefix' => 'post'], function (){
+    Route::get('create','PostController@create')->name('post.create');
+    Route::post('store','PostController@store')->name('post.store');
+    Route::get('show/{id}','PostController@show')->name('post.show');
+    Route::get('edit','PostController@edit')->name('post.edit');
+    Route::post('update','PostController@edit')->name('post.update');
+    Route::get('delete','PostController@destroy')->name('post.delete');
 });
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
