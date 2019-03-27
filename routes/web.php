@@ -21,3 +21,7 @@ Route::group(['prefix' => 'post'], function (){
     Route::post('update','PostController@edit')->name('post.update');
     Route::get('delete','PostController@destroy')->name('post.delete');
 });
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
